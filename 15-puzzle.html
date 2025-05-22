@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="15-puzzle.css">
+  <title>15 puzzle</title>
+</head>
+
+<body>
+  <header class="header">    
+    <h1 class="heading">15 puzzle</h1>
+  </header>
+  
+  <main class="main-content">
+    <h2 class="result">You Win!</h2>
+    <button class="restart-btn" id="restart-btn">restart
+    </button>
+    
+    <div class="before">  
+      <div class="container">  
+      </div>
+    </div>  
+    
+    <button class="play-again-btn" id="play-again-btn">play again
+    </button>
+    
+    <div class="form-cont">
+      <form action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="051cb640-96c4-408e-8d44-5aff4f84181e">
+        
+        <textarea class="comment-field" name="message" required="required" placeholder="comment...">
+        </textarea>
+        
+        <div class="btn-cont">
+          <button type="reset" class="cancel-btn">cancel
+          </button>
+          
+          <button type="submit" class="send-btn">send
+          </button>
+        </div>
+      </form>
+    </div>
+  </main>
+  <script src="15-puzzle.js"></script>
+</body>
+</html>

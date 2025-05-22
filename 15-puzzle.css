@@ -1,0 +1,207 @@
+* {  
+  margin: 0px;  
+  padding: 0px;  
+  box-sizing: border-box;  
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body { 
+  height: 100vh;  
+  background-image: url("background image car.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;  
+  background-position: center;
+}
+
+.header {  
+  padding: 10px 0px;    
+  background-color: transparent;  
+  backdrop-filter: blur(15px);  
+  position: sticky;  
+  top: 0;
+}
+
+.heading {  
+  text-align: center;  
+  background-image: linear-gradient(to right, rgb(63 113 185), rgb(20 227 210));  
+  -webkit-background-clip: text;  
+  -webkit-text-fill-color: transparent;
+  font-weight: 650;
+}
+
+.main-content {  
+  background-color: transparent;
+}
+
+.result {  
+  text-align: center;  
+  color: #41d416;  
+  font-size: 0rem;  
+  margin: 10px 0px 0px 0px;  
+  animation: 1s forwards;
+}
+
+@keyframes display-result {  
+  from {font-size: 0rem;}  
+  to {font-size: 2rem;}
+}
+
+.restart-btn {  
+  border: none;  
+  padding: 3px 6px;  
+  font-size: 1.4rem;  
+  border-radius: 7px;  
+  font-weight: 650;  
+  cursor: pointer;  
+  color: #2f2392;  
+  background-color: #07e6b7;  
+  transition: .3s;  
+  position: absolute;  
+  top: 67px;  
+  left: 15px;
+}
+
+.restart-btn:hover, .restart-btn:focus {  box-shadow: 6px 6px 4px rgba(0, 0, 0, 0.7);
+}
+
+.container {  
+  background-color: black;  
+  border-radius: 2px;  
+  padding: 2px;  
+  width: 304px;  
+  display: grid;  
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+}
+
+@property --angle {  
+  syntax: "<angle>";  
+  initial-value: 0deg;  
+  inherits: false;
+}
+
+.before {  
+  content: "";  
+  background-image: conic-gradient(from var(--angle), transparent 50%,  #02e8ff, red, greenyellow);
+  position: absolute;  
+  top: 50%;  
+  left: 50%;  
+  transform: translate(-50%, -50%); 
+  border-radius: 2px;  padding: 0px;
+  animation: 1.3s infinite; 
+}
+
+@keyframes spin {  
+  from {--angle: 0deg;}  
+  to {--angle: 360deg;}
+}
+
+.empty-tile {  
+  background-color: transparent;  
+  border-radius: 2px;  
+  width: 73px;  
+  height: 73px;    
+  transition: 1s;
+}
+
+.tile {  
+  background-color: #068bb2;  
+  color: hsl(0deg 0% 0%);  
+  border-radius: 2px;  
+  width: 73px;  
+  min-height: 73px;  
+  display: flex;  
+  align-items: center;  
+  justify-content: center;  
+  font-size: 3rem;  
+  font-weight: 700;  
+  cursor: pointer;  
+  transition: 1s;  
+  animation-duration: 1.5s;  
+  animation-iteration-count: infinite;
+} 
+
+@keyframes change-color {  
+  0% {color: hsl(0deg 0% 0%);}  
+  50% {color: hsl(121deg 76% 50%);}
+  100% {color: hsl(0deg 0% 0%);}
+}
+
+.play-again-btn {  
+  border: none;  
+  height: 50px;  
+  overflow: hidden;  
+  font-size: 1.6rem;  
+  padding: 5px 15px;  
+  font-weight: 60;  
+  border-radius: 8px;  
+  cursor: pointer;  
+  color: whitesmoke;  
+  transition: .5s;  
+  background-color: #1c49b0;  
+  position: absolute;  
+  top: -5%;  
+  left: 50%;  
+  transform: translate(-50%, -50%);  
+  animation-duration: 0.5s;  
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.play-again-btn:hover, .play-again-btn:focus {  
+  box-shadow: 0px 0px 5px 5px #19b5e2;  
+  font-size: 1.8rem;
+}
+
+.play-again-btn:active, .restart-btn:active, .cancel-btn:active, .send-btn:active {  
+  opacity: 0.7;
+}
+  
+  @keyframes show-play-again-btn {  
+    from {top: -5%;}  
+    to {top: 50%;    height: 39px;}
+  }
+    
+    .form-cont {  padding: 5px;  background-color: #060d39;  border-radius: 7px;  position: absolute;  right: 10px;  bottom: 10px;  outline: 2px solid white;}
+
+.comment-field {  
+  border: none;  
+  border-radius: 5px;  
+  padding: 4px;  
+  font-size: 1.4rem;  
+  height: 35px;  
+  width: 150px;  
+  overflow-y: scroll;  
+  outline: none;  
+  transition: .3s;
+}
+
+.comment-field::-webkit-scrollbar {  width: 0px;
+}
+
+.btn-cont {  
+  display: flex;  
+  justify-content: space-between;  
+  height: 0px;  
+  transition: .3s;  
+  overflow: hidden;
+}
+
+.cancel-btn, .send-btn {  
+  border: none;  
+  padding: 3px 15px;  
+  font-size: 1rem;  
+  border-radius: 1px;  
+  cursor: pointer;  
+  font-weight: 600;
+}
+
+.cancel-btn {  
+  color: white;  
+  background-color: #ff2c2c;
+}
+
+.send-btn {  
+  color: #9600ff;  
+  background-color: #2ddfde;
+}
