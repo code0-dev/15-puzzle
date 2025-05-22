@@ -1,0 +1,1 @@
+The 15 Puzzle is a classic sliding puzzle consisting of a 4x4 grid with 15 numbered tiles and one empty space. The goal is to arrange the tiles in numerical order by sliding them into the empty space.
