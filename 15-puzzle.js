@@ -1,5 +1,6 @@
 "use strict";
 
+const body = document.body;
 const cont = document.querySelector(".container");
 const restartBtn = document.getElementById("restart-btn");
 const playAgainBtn = document.getElementById("play-again-btn");
@@ -122,6 +123,40 @@ function hideCommentSection() {
   document.querySelector(".comment-field").style.height = "35px";
   document.querySelector(".comment-field").style.width = "150px";
 };
+
+body.addEventListener("keydown", e => {
+  if (e.key === "ArrowUp") {
+    const emptyTileIndex = numArray.indexOf(null);
+    const bottomTileIndex = emptyTileIndex + 4;
+    if (numArray[bottomTileIndex]) {
+      [numArray[bottomTileIndex], numArray[emptyTileIndex]] = [numArray[emptyTileIndex], numArray[bottomTileIndex]];
+      renderTiles(numArray);
+    }
+  } else if (e.key === "ArrowDown") {
+    const emptyTileIndex = numArray.indexOf(null);
+    const topTileIndex = emptyTileIndex - 4;
+    if (numArray[topTileIndex]) {
+      [numArray[topTileIndex], numArray[emptyTileIndex]] = [numArray[emptyTileIndex], numArray[topTileIndex]];
+      renderTiles(numArray);
+    }
+  } else if (e.key === "ArrowLeft") {
+    const emptyTileIndex = numArray.indexOf(null);
+    const nextTileIndex = emptyTileIndex + 1;
+    const noneValidMoves = [4, 8, 12];
+    if (!noneValidMoves.includes(nextTileIndex) && numArray[nextTileIndex]) {
+      [numArray[nextTileIndex], numArray[emptyTileIndex]] = [numArray[emptyTileIndex], numArray[nextTileIndex]];
+      renderTiles(numArray);
+    }
+  } else if (e.key === "ArrowRight") {
+    const emptyTileIndex = numArray.indexOf(null);
+    const previousTileIndex = emptyTileIndex - 1;
+    const noneValidMoves = [3, 7, 11];
+    if (!noneValidMoves.includes(previousTileIndex) && numArray[previousTileIndex]) {
+      [numArray[previousTileIndex], numArray[emptyTileIndex]] = [numArray[emptyTileIndex], numArray[previousTileIndex]];
+      renderTiles(numArray);
+    }
+  }
+});  
   
 document.querySelector(".comment-field").addEventListener("focus", displayCommentSection);
   
