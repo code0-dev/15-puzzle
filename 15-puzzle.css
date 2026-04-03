@@ -14,9 +14,9 @@ body {
 }
 
 .header {  
-  padding: 10px 0px;    
+  padding: 15px 0px;
   background-color: transparent;  
-  backdrop-filter: blur(15px);  
+  backdrop-filter: blur(25px);  
   position: sticky;  
   top: 0;
 }
