@@ -4,7 +4,7 @@ const body = document.body;
 const cont = document.querySelector(".container");
 const restartBtn = document.getElementById("restart-btn");
 const playAgainBtn = document.getElementById("play-again-btn");
-//const numArray = [Array(15).keys()].map(num => num + 1);
+//let numArray = [Array(15).keys()].map(num => num + 1);
 let numArray = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
 numArray.push(null);
 numArray.sort(() => Math.random() - 0.5);
@@ -122,6 +122,7 @@ function hideCommentSection() {
   document.querySelector(".btn-cont").style.height = "0px";
   document.querySelector(".comment-field").style.height = "35px";
   document.querySelector(".comment-field").style.width = "150px";
+  document.querySelector(".comment-field").value = "";
 };
 
 body.addEventListener("keydown", e => {
@@ -145,13 +146,13 @@ body.addEventListener("keydown", e => {
     const noneValidMoves = [4, 8, 12];
     if (!noneValidMoves.includes(nextTileIndex) && numArray[nextTileIndex]) {
       [numArray[nextTileIndex], numArray[emptyTileIndex]] = [numArray[emptyTileIndex], numArray[nextTileIndex]];
-      renderTiles(numArray);
+      renderTiles(numArray);es.i
     }
   } else if (e.key === "ArrowLeft") {
     const emptyTileIndex = numArray.indexOf(null);
     const previousTileIndex = emptyTileIndex - 1;
     const noneValidMoves = [3, 7, 11];
-    if (!noneValidMoves.includes(previousTileIndex) && numArray[previousTileIndex]) {
+    if (!noneValidMovncludes(previousTileIndex) && numArray[previousTileIndex]) {
       [numArray[previousTileIndex], numArray[emptyTileIndex]] = [numArray[emptyTileIndex], numArray[previousTileIndex]];
       renderTiles(numArray);
     }
@@ -160,6 +161,8 @@ body.addEventListener("keydown", e => {
   
 document.querySelector(".comment-field").addEventListener("focus", displayCommentSection);
   
-document.querySelector(".comment-field").addEventListener("blur", hideCommentSection);
+document.querySelector(".comment-field").addEventListener("blur", () => {
+  setTimeout(() => hideCommentSection, 1000);
+});
   
   
