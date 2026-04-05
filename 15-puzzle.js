@@ -126,33 +126,35 @@ function hideCommentSection() {
 };
 
 body.addEventListener("keydown", e => {
-  if (e.key === "ArrowDown") {
+  if (e.key === "ArrowUp") {
     const emptyTileIndex = numArray.indexOf(null);
     const bottomTileIndex = emptyTileIndex + 4;
     if (numArray[bottomTileIndex]) {
       [numArray[bottomTileIndex], numArray[emptyTileIndex]] = [numArray[emptyTileIndex], numArray[bottomTileIndex]];
       renderTiles(numArray);
     }
-  } else if (e.key === "ArrowUp") {
+  } else if (e.key === "ArrowDown") {
     const emptyTileIndex = numArray.indexOf(null);
     const topTileIndex = emptyTileIndex - 4;
     if (numArray[topTileIndex]) {
       [numArray[topTileIndex], numArray[emptyTileIndex]] = [numArray[emptyTileIndex], numArray[topTileIndex]];
       renderTiles(numArray);
     }
-  } else if (e.key === "ArrowRight") {
+  } else if (e.key === "ArrowLeft") {
     const emptyTileIndex = numArray.indexOf(null);
     const nextTileIndex = emptyTileIndex + 1;
     const noneValidMoves = [4, 8, 12];
     if (!noneValidMoves.includes(nextTileIndex) && numArray[nextTileIndex]) {
       [numArray[nextTileIndex], numArray[emptyTileIndex]] = [numArray[emptyTileIndex], numArray[nextTileIndex]];
-      renderTiles(numArray);es.i
+      renderTiles(numArray);
     }
-  } else if (e.key === "ArrowLeft") {
+  } else if (e.key === "ArrowRight") {
+    console.log(e.key);
+    
     const emptyTileIndex = numArray.indexOf(null);
     const previousTileIndex = emptyTileIndex - 1;
     const noneValidMoves = [3, 7, 11];
-    if (!noneValidMovncludes(previousTileIndex) && numArray[previousTileIndex]) {
+    if (!noneValidMoves.includes(previousTileIndex) && numArray[previousTileIndex]) {
       [numArray[previousTileIndex], numArray[emptyTileIndex]] = [numArray[emptyTileIndex], numArray[previousTileIndex]];
       renderTiles(numArray);
     }
