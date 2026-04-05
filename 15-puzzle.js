@@ -149,8 +149,6 @@ body.addEventListener("keydown", e => {
       renderTiles(numArray);
     }
   } else if (e.key === "ArrowRight") {
-    console.log(e.key);
-    
     const emptyTileIndex = numArray.indexOf(null);
     const previousTileIndex = emptyTileIndex - 1;
     const noneValidMoves = [3, 7, 11];
