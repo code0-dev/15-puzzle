@@ -123,6 +123,8 @@ function hideCommentSection() {
   document.querySelector(".comment-field").style.height = "35px";
   document.querySelector(".comment-field").style.width = "150px";
   document.querySelector(".comment-field").value = "";
+  console.log("done hidden");
+  
 };
 
 body.addEventListener("keydown", e => {
@@ -162,7 +164,7 @@ body.addEventListener("keydown", e => {
 document.querySelector(".comment-field").addEventListener("focus", displayCommentSection);
   
 document.querySelector(".comment-field").addEventListener("blur", () => {
-  setTimeout(() => hideCommentSection, 1000);
+  setTimeout(hideCommentSection, 5000);
 });
   
   
